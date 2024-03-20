@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "Norse-font";
+    src: url('Norse-Bold.otf');
+}
+
+body {
+    margin: 0; /* Reset the default */
+    padding: 0;
+    height: 100vh; /* Set to 100vh so the body uses the whole view instead of defaulting to the component size */
+    display: flex;
+}
+
+.side-bar { /* Elements are positioned static by default */
+    position: relative; /* Explicitly state its relative, so logo can be absolutely positioned against nearest ancestor (relative) */
+    width: 27%;
+    background-image: url('halie-west-25xggax4bSA-unsplash.jpg');
+    background-size: cover; /* auto (retain original size), cover (scaled, crop excess), contain (scaled to fit image, empty space), length (specify dimensions) */
+    display: flex; /* Set so I use justify-content and align-items to center the logo/text, ALSO possible to use transform/translate since position is set to relative */
+}
+
+.logo {
+    position: absolute;
+    display: flex; /* So the logo and odin text can be set side by side */
+    background-color: rgb(0, 0, 0, 0.25);
+    top: 20%;
+    /* padding: 0px; /* If you use padding for top and bottom, you can also use something like 10px 0 to solve same problem as box sizing (where it overflows) */
+    width: 100%;
+    box-sizing: border-box; /* Include padding and borders in the width calculation to prevent the logo div from overflowing since it is 30% width */
+    justify-content: center;
+    align-items: center; /* If you get rid of this, the logo is no longer centered since images are inline-level elements, but the odin text is still 
+    centered since it is block-level elements by default, it stretches to fill the flex container */
+}
+
+#picture {
+    height: 120px; /*Images have no default margin and padding values, so you can just set it on this to obtain the desired look */
+
+}
+
+#odin-text {
+    font-family: "Norse-font", sans-serif;
+    color: white;
+    font-size: 90px; /* Can also use rem (relative to root font size) or em (relative to parent font size), if using rem/em and font size is not specified, default is 16px) */
+    /* padding: 0px; You can change padding for top and bottom for text instead of picture if you want, no default value for margin and padding */
+    margin: 30px 0; /* Get rid of the extra height added to the container div on the top and bottom */
+}
+
+/* Note: Margin collapsing, top and bottom margins of blocks are sometimes combined into a single margin whose size is the largest of the two */
+/* Note: Baselines and alignment for block and inline level elements can influence that flex container */
+
+.credit {
+    height: 50px;
+}
+
+.main-content {
+    width: 73%;
+}
