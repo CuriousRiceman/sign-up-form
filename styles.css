@@ -15,7 +15,7 @@ body {
     width: 27%;
     background-image: url('halie-west-25xggax4bSA-unsplash.jpg');
     background-size: cover; /* auto (retain original size), cover (scaled, crop excess), contain (scaled to fit image, empty space), length (specify dimensions) */
-    display: flex; /* Set so I use justify-content and align-items to center the logo/text, ALSO possible to use transform/translate since position is set to relative */
+    /* display: flex; */ /* Set so I use justify-content and align-items to center the logo/text, ALSO possible to use transform/translate since position is set to relative */
 }
 
 .logo {
@@ -24,7 +24,7 @@ body {
     background-color: rgb(0, 0, 0, 0.25);
     top: 20%;
     /* padding: 0px; /* If you use padding for top and bottom, you can also use something like 10px 0 to solve same problem as box sizing (where it overflows) */
-    width: 100%;
+    width: 100%; /* Can definitely set it 27% width similar to sidebar and credit but this is alternative */
     box-sizing: border-box; /* Include padding and borders in the width calculation to prevent the logo div from overflowing since it is 30% width */
     justify-content: center;
     align-items: center; /* If you get rid of this, the logo is no longer centered since images are inline-level elements, but the odin text is still 
@@ -47,8 +47,15 @@ body {
 /* Note: Margin collapsing, top and bottom margins of blocks are sometimes combined into a single margin whose size is the largest of the two */
 /* Note: Baselines and alignment for block and inline level elements can influence that flex container */
 
-.credit {
-    height: 50px;
+#credit {
+    color: white;
+    position: fixed;
+    width: 27%;
+    bottom: 10px; /* Set the footer, can use <footer> tag but this is an alternative */
+    margin: 0;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
 }
 
 .main-content {
