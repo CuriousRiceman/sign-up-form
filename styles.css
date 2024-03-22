@@ -60,4 +60,57 @@ body {
 
 .main-content {
     width: 73%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sign-up {
+    display: flex; /* Since I divided the divs into rows and groups, I use flex so the rows can be stacked on each other */
+    flex-direction: column;
+}
+
+#lets-go, #paragraph-1, #paragraph-2, .create-button { /* Can reference each paragraph/line individually or use the class name, either way works, I've used both to demonstrate */
+    padding-left: 50px;
+    font-weight: bold; 
+}
+
+.row {
+    display: flex; /* Similar idea to the above but for columns this time */
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+/* .column {
+flex-grow: 1; For equal spacing in the row, add border: 2px dashed black to the column row and sign-up div to see it clearly
+} But I will make use of a pseudo-class selector instead*/
+
+div.row .column:nth-child(2) { /* Can just do .column and set the padding if you want */
+    padding-left: 60px; /* Selects the divs in the 2nd column and adds padding to the left */
+}
+
+div.row .column:nth-child(1) {
+    padding-left: 50px;
+}
+
+label {
+    display: block; /* So the label can take the entire width/line instead of being side by side with the input */
+    margin-bottom: 5px;
+}
+
+input {
+    border: 1px solid #E5E7EB; /* Add a border */
+    border-radius: 5px;
+}
+
+input:focus {
+    box-shadow: 0 0 5px 0 rgba(0, 86, 179, 0.5); /* h-offset, v-offset, blur, spread, color */
+}
+
+input.error:focus {
+    border: 1px solid red; /* Change border color to red */
+    box-shadow: none;
+}
+
+button:hover {
+    background-color: #0056b3; /* Change background color on hover */
 }
