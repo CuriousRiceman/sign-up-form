@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script defer src="validate.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -46,11 +47,12 @@
             <div class="row">
               <div class="column">
                 <label for="password">PASSWORD</label>
-                <input type="password" class="error" name="password" id="password">
+                <input type="password" name="password" id="password">
+                <p id="password-error" class="hidden">*Passwords do not match.</p>
               </div>
               <div class="column">
                 <label for="confirm-password">CONFIRM PASSWORD</label>
-                <input type="password" class="error" name="confirm-password" id="confirm-password">
+                <input type="password" name="confirm-password" id="confirm-password">
               </div>
             </div>
           </form>
@@ -61,4 +63,5 @@
         </div>
     </div>
 </body>
+
 </html>
